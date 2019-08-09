@@ -10,10 +10,10 @@ app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json({type:'*/*'}))
 
 var con = mysql.createConnection({
-    host:'localhost',
-    user:'hellosay_no01',
-    password:'2RdymJS1a8',
-    database:'hellosay_no01'
+    host:'us-cdbr-iron-east-02.cleardb.net',
+    user:'bd89c04157b71b',
+    password:'ec903f18',
+    database:'heroku_feb8a5e884bb6f2'
 })
 
 con.connect(function(err){
