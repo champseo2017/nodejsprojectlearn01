@@ -1,0 +1,33 @@
+{
+  "name": "nodejsprojectlearn01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "express-myconnection": "^1.0.4",
+    "jwt-simple": "^0.5.1",
+    "moment": "^2.20.1",
+    "mysql": "^2.15.0",
+    "nodemon": "^1.14.3",
+    "passport": "^0.4.0",
+    "passport-jwt": "^3.0.1",
+    "passport-local": "^1.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/champseo2017/nodejsprojectlearn01.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/champseo2017/nodejsprojectlearn01/issues"
+  },
+  "homepage": "https://github.com/champseo2017/nodejsprojectlearn01#readme"
+}
