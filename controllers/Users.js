@@ -31,6 +31,8 @@ exports.create = (req, res, next) => {
         password: body.password
     }
 
+    console.log(post)
+
     req.getConnection(function (err, connection) {
         connection.query("select username from user where username=?", [post.username], function (err, results) {
             if (err) return next(err)
