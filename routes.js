@@ -6,8 +6,6 @@ module.exports = function (app) {
         res.send({ message: 'itService' })
     })
 
-    app.post('/signin', requireSignin, users.signin)
-
     app.get('/users', users.findAll)
     app.post('/users', users.create)
     app.get('/users/:id', users.findById)
