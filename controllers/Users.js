@@ -1,3 +1,25 @@
+const jwt = require('jwt-simple')
+const config = require('../config')
+
+function tokenForUser(user){
+    const timestamp = new Date().getTime();
+    return jwt.encode(
+        {
+            sub: user.id,
+            user_type: user.user_type,
+            name: user.name,
+            username: user.username,
+            iat:timestamp
+        },
+        config.secret
+    )
+}
+
+exports.signin = (req, res, next) =>{
+    console.log("req.user***************************",req);
+    res.send({token:tokenForUser(req.user)})
+}
+
 exports.findAll = (req, res, next) => {
     req.getConnection((err, connection) => {
         if (err) return next(err)

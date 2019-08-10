@@ -1,3 +1,6 @@
+const passport = require('passport')
+const passportService = require('./service/passport')
+const requireSignin = passport.authenticate('local', {session:false})
 const users = require('./controllers/Users')
 
 module.exports = function (app) {
@@ -5,6 +8,8 @@ module.exports = function (app) {
     app.get('/', function (req, res) {
         res.send({ message: 'itService' })
     })
+
+    app.post('/signin', requireSignin, users.signin)
 
     app.get('/users', users.findAll)
     app.post('/users', users.create)
