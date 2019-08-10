@@ -2,6 +2,7 @@ const jwt = require('jwt-simple')
 const config = require('../config')
 
 function tokenForUser(user){
+    console.log('*************456',user);
     const timestamp = new Date().getTime();
     return jwt.encode(
         {
