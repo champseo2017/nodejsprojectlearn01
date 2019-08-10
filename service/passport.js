@@ -11,6 +11,7 @@ const localLogin = new LocalStrategy(localOptions, function(req, username, passw
             if(row[0].password !== password){
                 return done(null, false)
             }else{
+                console.log(row[0])
                 return done(null, row[0])
             }
         })
