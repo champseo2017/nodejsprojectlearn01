@@ -14,8 +14,8 @@ module.exports = function (app) {
     app.post('/signin', requireSignin, users.signin)
 
     app.get('/users', requireAuth, users.findAll)
-    app.post('/users', users.create)
-    app.get('/users/:id', users.findById)
-    app.put('/users/:id', users.update)
-    app.delete('/users/:id', users.delete)
+    app.post('/users', requireAuth, users.create)
+    app.get('/users/:id', requireAuth, users.findById)
+    app.put('/users/:id', requireAuth, users.update)
+    app.delete('/users/:id', requireAuth, users.delete)
 }
