@@ -8,7 +8,7 @@ const users = require('./controllers/Users')
 module.exports = function (app) {
 
     app.get('/', function (req, res) {
-        res.send({ message: 'itService' })
+        res.send({ message: 'api itService' })
     })
 
     app.post('/signin', requireSignin, users.signin)
