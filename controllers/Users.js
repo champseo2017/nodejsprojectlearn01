@@ -1,15 +1,15 @@
 const jwt = require('jwt-simple')
 const config = require('../config')
 
-function tokenForUser(user){
-    console.log('*************456',user);
+function tokenForUser(userlogin){
+    console.log('*************456',userlogin);
     const timestamp = new Date().getTime();
     return jwt.encode(
         {
-            sub: user.id,
-            user_type: user.user_type,
-            name: user.name,
-            username: user.username,
+            sub: userlogin.id,
+            user_type: userlogin.user_type,
+            name: userlogin.name,
+            username: userlogin.username,
             iat:timestamp
         },
         config.secret
