@@ -17,7 +17,7 @@ function tokenForUser(user){
 }
 
 exports.signin = (req, res, next) =>{
-    res.send({token:tokenForUser(req)})
+    res.send({token:tokenForUser(req.userlogin)})
 }
 
 exports.findAll = (req, res, next) => {
