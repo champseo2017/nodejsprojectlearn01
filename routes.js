@@ -15,12 +15,7 @@ module.exports = function (app) {
 
     app.post('/signin', requireSignin, users.signin)
 
-    app.get('/users', requireAuth, users.findAll,function(req,res){
-        res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type'); // If needed
-    res.setHeader('Access-Control-Allow-Credentials', true); // If needed
-    })
+    app.get('/users', requireAuth, users.findAll)
     app.post('/users', requireAuth, users.create)
     app.get('/users/:id', requireAuth, users.findById)
     app.put('/users/:id', requireAuth, users.update)
