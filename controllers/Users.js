@@ -83,18 +83,12 @@ exports.update = (req, res, next) => {
     req.getConnection(function (err, connection) {
         connection.query("select * from user where username=?", [post.username], function (err, results) {
             if (err) return next(err)
-
             var isUpdate = false;
             if (results.length > 0) {
-                if (results[0].id !== id) {
-                    res.send({ status: 201, message: 'Username is Duplicate' })
-                } else {
+                if (results[0].id == id) {
                     isUpdate = true
-                }
-            } else {
-                isUpdate = true
-            }
-
+                } 
+            } 
             if (isUpdate) {
                 connection.query("update user set ? where id=?", [post, id], function (err, results) {
                     if (err) return next(err)
