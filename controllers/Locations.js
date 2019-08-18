@@ -50,7 +50,7 @@ exports.update = (req, res, next) =>{
     var {body} = req
     var post = {
         code: body.code,
-        //name: body.name
+        name: body.name
     }
     req.getConnection((err, connection) =>{
         if(err) return next(err)
