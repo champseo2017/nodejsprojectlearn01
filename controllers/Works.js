@@ -42,6 +42,7 @@ exports.create = (req, res, next) => {
     }
 
     req.getConnection(function (err, connection) {
+        if (err) return next(err)
         connection.query("insert into work set ? ", post, (err, results) => {
             if (err) return next(err)
             res.send(results)
